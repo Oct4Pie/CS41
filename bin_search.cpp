@@ -43,6 +43,14 @@ class Stack {
         }
     }
 
+    void print() {
+        cout << "{ ";
+        for (int i = 0; i < index; i++) {
+            cout << arr[i] << " ";
+        }
+        cout << "}" << endl;
+    }
+
     // int search(int key) {
     //     int mid = index / 2;
     //     int count = 0;
@@ -61,17 +69,15 @@ class Stack {
     //     return -1;
     // }
 
-    int search(int key) {
-        int mid = index / 2;
-        int count = 0;
-        while (count++ < mid + 1) {
-            cout << mid << endl;
-            if (arr[mid] < key) {
-                mid /= 2;
+    int search(int key, int s = 0, int e = max_len) {
+        while (e + s > 1) {
+            int mid = (e - s) / 2;
+            if (arr[mid] > key) {
+                e = mid;
                 continue;
             }
-            if (arr[mid] > key) {
-                mid += mid / 2;
+            if (arr[mid] < key) {
+                s = -mid;
                 continue;
             }
             return mid;
@@ -86,6 +92,7 @@ int main() {
     for (int i = 0; i < 15; i++) {
         st.push(i * i);
     }
+    st.print();
     int key = rand() % 15 * 15 + 1;
     int index = st.search(key);
     cout << "key: " << key << " is at " << index << endl;
