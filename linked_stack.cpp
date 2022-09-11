@@ -12,11 +12,9 @@ class node {
 };
 
 class stack {
-   private:
-    node* top;
-    int count;
-
    public:
+   node* top;
+    int count;
     stack() {
         count = 0;
     }
@@ -79,3 +77,7 @@ int main() {
     s->print();
     return 0;
 }
+
+// ./linked_stack
+// [25, 20, 15, 10, ]
+// [15, 10, ]

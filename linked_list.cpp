@@ -82,3 +82,8 @@ int main() {
     q->dequeue();
     q->print();
 }
+
+
+// ./linked_list
+// [10, 15, 20, ]
+// [20, ]

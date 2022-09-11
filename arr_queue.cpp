@@ -68,3 +68,7 @@ int main() {
     a->print();
     return 0;
 }
+
+// ./arr_queue
+// [25, 20, 15, 10, ]
+// [25, 20, ]
